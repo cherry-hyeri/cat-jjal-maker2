@@ -43,7 +43,6 @@
         return JSON.parse(localStorage.getItem(key));
       },
     };
-    console.log("야옹");
 
     const Title = (props) => {
       return (
@@ -68,7 +67,7 @@
       function handleFormSubmit(e) {
         e.preventDefault();
         setErrorMessage("");
-        if (value == "") {
+        if (value === "") {
           setErrorMessage("빈 값으로 만들 수 없습니다.")
           return;
         }
@@ -87,7 +86,7 @@
     function CatItem(props) {
       return (
         <li>
-          <img src={props} style={{ width: "150px" }} />
+          <img src={props.img} style={{ width: "150px" }} />
         </li>
       );
     }
@@ -124,13 +123,13 @@
         setMainCat(CAT2);
         const nextCounter = counter + 1
         setCounter(nextCounter);
-        jsonLocalStorage.setItem('counter', nextCounter)
+        jsonLocalStorage.setItem('counter', nextCounter);
       }
 
       function handleHeartClick() {
         const nextFavorites = [...favorites, mainCat]
         setFavorites(nextFavorites);
-        jsonLocalStorage.setItem('facorites', nextFavorites)
+        jsonLocalStorage.setItem('favorites', nextFavorites);
       }
 
       return (
